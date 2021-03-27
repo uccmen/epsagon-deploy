@@ -16,3 +16,4 @@ node_modules/
 epsagon_handlers/
 .run/
 *.log
+build/
