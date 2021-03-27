@@ -10,7 +10,6 @@ service:
 plugins:
   - serverless-plugin-epsagon
   - serverless-webpack
-  - serverless-offline
 
 provider:
   name: aws
