@@ -1,5 +1,5 @@
+import {filter} from '@atlaskit/adf-utils';
 import {APIGatewayEvent} from 'aws-lambda';
-import {ADFEntity, filter} from '@atlaskit/adf-utils';
 
 export const hello = async (event: APIGatewayEvent) => {
   return {
@@ -14,7 +14,7 @@ export const hello = async (event: APIGatewayEvent) => {
 export const getTemplateAdf = async (event: APIGatewayEvent) => {
   const fieldGroupMacro = filter(
     {type: 'something'},
-    (node: ADFEntity) =>
+    (node) =>
       node.attrs?.extensionKey === 'field-group' &&
       node.attrs?.parameters?.macroMetadata.macroId?.value === 'someId'
   );
