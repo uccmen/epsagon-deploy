@@ -20,6 +20,12 @@ provider:
     Product: "epsagon-deploy-demo"
     Team: "tools-cc"
   versionFunctions: false
+  logs:
+    restApi: true
+  logRetentionInDays: 90
+  tracing:
+    apiGateway: true
+    lambda: true
 
 custom:
   environment: ${opt:environment, 'development'}
@@ -34,12 +40,16 @@ custom:
 functions:
   hello0:
     handler: handler.hello
+    epsagon:
+      disable: true
     events:
       - http:
           method: get
           path: hello0
   hello1:
     handler: handler.hello
+    epsagon:
+      disable: true
     events:
       - http:
           method: get
