@@ -27,6 +27,9 @@ custom:
     token: ${opt:epsagonToken}
     appName: ${self:service.name}-${self:provider.stage}
     metadataOnly: false
+  webpack:
+    webpackConfig: 'webpack.config.ts'
+    packager: 'yarn'
 
 functions:
   hello0:
