@@ -144,9 +144,9 @@ functions:
       - http:
           method: get
           path: hello16
-  hello17:
-    handler: handler.hello
+  getTemplateAdfHandler:
+    handler: handler.getTemplateAdf
     events:
       - http:
           method: get
-          path: hello17
+          path: template
