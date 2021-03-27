@@ -1,0 +1,18 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# Webpack directories
+.webpack
+
+.idea
+
+.serverless/
+.webpack/
+node_modules/
+epsagon_handlers/
+.run/
+*.log

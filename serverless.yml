@@ -1,0 +1,133 @@
+service:
+  name: epsagon-deploy
+  region: ${opt:region, env:AWS_REGION, env:AWS_DEFAULT_REGION}
+  stage: ${opt:stage, 'development'}
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-plugin-epsagon
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+custom:
+  epsagon:
+    token: ${opt:epsagonToken}
+    appName: ${self:service}-${self:provider.stage}
+    metadataOnly: false
+
+functions:
+  hello0:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello0
+  hello1:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello1
+  hello2:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello2
+  hello3:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello3
+  hello4:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello4
+  hello5:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello5
+  hello6:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello6
+  hello7:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello7
+  hello8:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello8
+  hello9:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello9
+  hello10:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello10
+  hello11:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello11
+  hello12:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello12
+  hello13:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello13
+  hello14:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello14
+  hello15:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello15
+  hello16:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello16
+  hello17:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello17

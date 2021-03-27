@@ -1,0 +1,49 @@
+name: Deploy app to aws
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      - labeled
+      - opened
+      - reopened
+      - synchronize
+    branches:
+      - master
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_GREEN_LABS }}
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_GREEN_LABS }}
+  AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN_GREEN_LABS }}
+  EPSAGON_TOKEN: ${{ secrets.EPSAGON_TOKEN }}
+  STAGE_NAME: ${{ secrets.STAGE_NAME }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache dependencies
+        id: cache-dependencies
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: dependencies-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
+      - name: Deploy app
+        run: |
+          yarn run deploy \
+            --epsagonToken=${{ env.EPSAGON_TOKEN }} \
+            --stage=${{ env.STAGE_NAME }}
