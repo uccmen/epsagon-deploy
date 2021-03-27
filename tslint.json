@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "tslint-react-hooks",
+    "tslint:recommended",
+    "tslint-xo",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "comment-format": [true, "check-space"],
+    "max-line-length": false,
+    "member-access": [true, "no-public"],
+    "quotemark": [true, "single"],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "indent": [true, "spaces", 2],
+    "interface-name": [true, "never-prefix"],
+    "no-implicit-dependencies": false,
+    "no-irregular-whitespace": true,
+    "no-trailing-whitespace": [true, "ignore-comments"],
+    "no-unused-expression": [true, "allow-fast-null-checks"],
+    "strict-type-predicates": true,
+    "file-name-casing": [false],
+    "ordered-imports": true
+  },
+  "linterOptions": {
+    "exclude": ["*.js", "**/epsagon_handlers/*.ts"]
+  }
+}

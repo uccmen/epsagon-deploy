@@ -1,12 +1,16 @@
 {
   "compilerOptions": {
-    "lib": ["es2017"],
+    "baseUrl": ".",
+    "lib": ["dom", "esnext"],
     "moduleResolution": "node",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noImplicitAny": false,
+    "outDir": "./build",
+    "resolveJsonModule": true,
     "sourceMap": true,
-    "target": "es2017",
-    "outDir": "lib"
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "es6",
+    "esModuleInterop": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "epsagon_handlers"]
 }
