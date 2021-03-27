@@ -1,7 +1,5 @@
 service:
   name: epsagon-deploy
-  region: ${opt:region, env:AWS_REGION, env:AWS_DEFAULT_REGION}
-  stage: ${opt:stage, 'development'}
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -14,11 +12,20 @@ plugins:
 provider:
   name: aws
   runtime: nodejs12.x
+  region: ${opt:region, env:AWS_REGION, env:AWS_DEFAULT_REGION}
+  stage: ${opt:stage, 'development'}
+  stackTags:
+    Business: "green"
+    Environment: ${self:custom.environment}
+    Product: "epsagon-deploy-demo"
+    Team: "tools-cc"
+  versionFunctions: false
 
 custom:
+  environment: ${opt:environment, 'development'}
   epsagon:
     token: ${opt:epsagonToken}
-    appName: ${self:service}-${self:provider.stage}
+    appName: ${self:service.name}-${self:provider.stage}
     metadataOnly: false
 
 functions:
