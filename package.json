@@ -104,7 +104,6 @@
     "source-map-loader": "^2.0.0",
     "tslint-react-hooks": "^2.2.2",
     "webpack-dev-server": "^3.11.0",
-    "@servicerocket/conf-cloud-dev-utils": "^0.2.1",
     "chokidar-cli": "^2.1.0",
     "del-cli": "^3.0.1",
     "handlebars": "^4.7.6",
