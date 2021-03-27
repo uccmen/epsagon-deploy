@@ -1,7 +1,6 @@
-import { APIGatewayProxyHandler } from 'aws-lambda';
-import 'source-map-support/register';
+import {APIGatewayEvent} from 'aws-lambda';
 
-export const hello: APIGatewayProxyHandler = async (event, _context) => {
+export const hello = async (event: APIGatewayEvent) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
