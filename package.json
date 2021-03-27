@@ -103,7 +103,20 @@
     "s3-deploy": "^1.4.0",
     "source-map-loader": "^2.0.0",
     "tslint-react-hooks": "^2.2.2",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "@servicerocket/conf-cloud-dev-utils": "^0.2.1",
+    "chokidar-cli": "^2.1.0",
+    "del-cli": "^3.0.1",
+    "handlebars": "^4.7.6",
+    "handlebars-jest": "^0.5.0",
+    "handlebars-loader": "^1.7.1",
+    "jsverify": "^0.8.4",
+    "serverless": "^2.17.0",
+    "serverless-domain-manager": "^5.1.0",
+    "serverless-dynamodb-local": "^0.2.39",
+    "serverless-offline": "^6.8.0",
+    "serverless-plugin-epsagon": "^1.10.2",
+    "serverless-webpack": "^5.3.5"
   },
   "resolutions": {
     "prosemirror-model": "1.11.0",
