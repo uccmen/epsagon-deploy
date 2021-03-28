@@ -6,7 +6,8 @@
   "version": "0.0.1",
   "scripts": {
     "deploy": "yarn lint && sls deploy",
-    "deploy:dev": "sls deploy --environment=development"
+    "deploy:dev": "sls deploy --environment=development",
+    "lint": "tslint --project ./tsconfig.json --config ../tslint.json"
   },
   "jestSonar": {
     "reportPath": "coverage",
