@@ -1,9 +1,7 @@
-import {APIGatewayEvent} from 'aws-lambda';
+import {APIGatewayEvent, AuthResponse, Callback, CustomAuthorizerResult, Handler} from 'aws-lambda';
+import {APIGatewayRequestAuthorizerEvent} from 'aws-lambda/trigger/api-gateway-authorizer';
 import {fieldGroupStaticHandler} from './src/handler/macro/field-group-static';
-import {
-  AuthResponse, Callback, CustomAuthorizerEvent, CustomAuthorizerResult, Handler
-} from 'aws-lambda';
-import {AuthenticatedContext} from "./src/type/authorizer";
+import {AuthenticatedContext} from './src/type/authorizer';
 
 export const hello = async (event: APIGatewayEvent) => {
   return {
@@ -42,10 +40,10 @@ export const generateIAMPolicy = (
   principalId
 });
 
-export const getAuthorizerHandler = (): Handler<CustomAuthorizerEvent, CustomAuthorizerResult | void> => async (
+export const getAuthorizerHandler = (): Handler<APIGatewayRequestAuthorizerEvent, CustomAuthorizerResult | void> => async (
   {
-    headers, httpMethod, methodArn, path, queryStringParameters
-  }, context, callback
+    methodArn, queryStringParameters
+  }, _context, callback
 ): Promise<AuthResponse | void> => {
   const authToken = queryStringParameters?.jwt;
   const principalId = queryStringParameters?.user_account_id;
