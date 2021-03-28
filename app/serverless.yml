@@ -1,5 +1,4 @@
-service:
-  name: epsagon-deploy
+service: epsagon-deploy
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -31,7 +30,8 @@ custom:
   environment: ${opt:environment, 'development'}
   epsagon:
     token: ${opt:epsagonToken}
-    appName: ${self:service.name}-${self:provider.stage}
+    disable: false
+    appName: ${self:service}-${self:provider.stage}
     metadataOnly: false
   webpack:
     webpackConfig: 'webpack.config.ts'

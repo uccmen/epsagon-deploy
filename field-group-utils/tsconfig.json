@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig-base.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "declaration": true,
+    "esModuleInterop": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "skipLibCheck": true,
+    "lib": ["esnext"]
+  },
+  "exclude": ["node_modules", "lib"],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts"]
+}

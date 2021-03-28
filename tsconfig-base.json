@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["dom", "esnext"],
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "outDir": "./build",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "es6",
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules"]
+}

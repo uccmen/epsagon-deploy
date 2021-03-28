@@ -12,10 +12,10 @@ on:
       - master
 
 env:
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_GREEN_LABS }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_REGION: ${{ secrets.AWS_REGION }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_GREEN_LABS }}
-  AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN_GREEN_LABS }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
   EPSAGON_TOKEN: ${{ secrets.EPSAGON_TOKEN }}
   STAGE_NAME: ${{ secrets.STAGE_NAME }}
 
@@ -44,6 +44,6 @@ jobs:
         run: yarn --frozen-lockfile
       - name: Deploy app
         run: |
-          yarn run deploy \
+          yarn run deploy:app \
             --epsagonToken=${{ env.EPSAGON_TOKEN }} \
             --stage=${{ env.STAGE_NAME }}

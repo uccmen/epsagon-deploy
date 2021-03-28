@@ -1,13 +1,19 @@
 *.log
+*.md
+*.hbs
+*.css
+*.yml
 .scannerwork/
 .serverless/
 .webpack/
 .idea/
 .run/
+.github/
 
 coverage/
 node_modules/
 
+/app/*.yml
 /app/build/
 /app/coverage
 /app/credentials.json

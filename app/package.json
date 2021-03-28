@@ -1,0 +1,42 @@
+{
+  "name": "@servicerocket/scaff-cloud-app",
+  "author": "ServiceRocket",
+  "license": "UNLICENSED",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "deploy": "yarn lint && sls deploy",
+    "deploy:dev": "sls deploy --environment=development"
+  },
+  "jestSonar": {
+    "reportPath": "coverage",
+    "reportFile": "test-reporter.xml",
+    "indent": 4
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "yarn lint --fix",
+      "prettier --ignore-path ../.prettierignore --config ../.prettierrc.json --write ."
+    ]
+  },
+  "dependencies": {
+    "@servicerocket/scaff-cloud-field-group-utils": "^0.0.1",
+    "atlassian-jwt": "^1.0.3",
+    "dynamoose": "^2.3.0",
+    "epsagon": "^1.102.2"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^2.1.0",
+    "del-cli": "^3.0.1",
+    "handlebars": "^4.7.6",
+    "handlebars-jest": "^0.5.0",
+    "handlebars-loader": "^1.7.1",
+    "jsverify": "^0.8.4",
+    "serverless": "^2.17.0",
+    "serverless-domain-manager": "^5.1.0",
+    "serverless-dynamodb-local": "^0.2.39",
+    "serverless-offline": "^6.8.0",
+    "serverless-plugin-epsagon": "^1.10.0",
+    "serverless-webpack": "^5.3.5"
+  }
+}
