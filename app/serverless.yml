@@ -30,6 +30,7 @@ custom:
   environment: ${opt:environment, 'development'}
   epsagon:
     token: ${opt:epsagonToken}
+    disable: false
     appName: ${self:service}-${self:provider.stage}
     metadataOnly: false
   webpack:
