@@ -35,6 +35,11 @@ custom:
   webpack:
     webpackConfig: 'webpack.config.ts'
     packager: 'yarn'
+  queryStringJWTAuthorizer:
+    name: queryStringJWTAuthorizer
+    resultTtlInSeconds: 0
+    identitySource: method.request.querystring.jwt
+    type: request
 
 functions:
   hello0:
@@ -45,6 +50,8 @@ functions:
       - http:
           method: get
           path: hello0
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello1:
     handler: handler.hello
     epsagon:
@@ -53,99 +60,135 @@ functions:
       - http:
           method: get
           path: hello1
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello2:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello2
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello3:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello3
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello4:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello4
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello5:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello5
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello6:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello6
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello7:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello7
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello8:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello8
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello9:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello9
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello10:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello10
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello11:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello11
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello12:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello12
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello13:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello13
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello14:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello14
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello15:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello15
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   hello16:
     handler: handler.hello
     events:
       - http:
           method: get
           path: hello16
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
   getTemplateAdfHandler:
     handler: handler.getTemplateAdf
     events:
       - http:
           method: get
           path: template
+          cors: true
+          authorizer: ${self:custom.queryStringJWTAuthorizer}
+  queryStringJWTAuthorizer:
+    handler: handler.authorizer
