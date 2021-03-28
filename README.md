@@ -8,7 +8,12 @@ This project has 2 PRs created with Github Action workflow performed on each to 
 
 It is noticeable that webpack compilation time took longer when epsagon is enabled as seen in the Github Action logs.
 
-To reproduce the workflows triggered, simply fork this project, set these secrets in your repository, and create PRs with similar changes.
+## Getting Started - Build
+
+- Clone this project and run `$ yarn` from the project root directory to install dependencies for all packages.
+
+## To trigger Github Actions
+- Simply fork this project, set these secrets in your repository, and create PRs with similar changes.
 
 ```
 AWS_ACCESS_KEY_ID
