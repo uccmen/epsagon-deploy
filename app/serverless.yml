@@ -31,6 +31,7 @@ custom:
   epsagon:
     token: ${opt:epsagonToken}
     appName: ${self:service}-${self:provider.stage}
+    disable: true
     metadataOnly: false
   webpack:
     webpackConfig: 'webpack.config.ts'
