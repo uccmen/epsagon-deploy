@@ -17,7 +17,7 @@ provider:
     Business: "green"
     Environment: ${self:custom.environment}
     Product: "epsagon-deploy-demo"
-    Team: "tools-cc"
+    Team: "tools-cc-test"
   versionFunctions: false
   logs:
     restApi: true
